@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Feb 08 11:04:39 IST 2024","Thu Feb 08 11:04:58 IST 2024","19363","","Make user an admin","","","","create user and make that user admin ",""
+"passed","Thu Feb 08 11:04:25 IST 2024","Thu Feb 08 11:04:39 IST 2024","13610","","create user","","","","to create user",""
+"passed","Thu Feb 08 11:04:58 IST 2024","Thu Feb 08 11:05:03 IST 2024","5200","","Verify that new user have all permisssions as admin","","",""," Check new user have all permissions as admin.",""
+"passed","Thu Feb 08 11:04:06 IST 2024","Thu Feb 08 11:04:15 IST 2024","8547","","verify forgot your password interface","","","","Password should be verified.user able to click on forgot your password.",""
+"passed","Thu Feb 08 11:04:15 IST 2024","Thu Feb 08 11:04:20 IST 2024","4549","","password reset","","","","If the user forgot password they have to select reset password.They change their password and login with new credentials.",""
+"passed","Thu Feb 08 11:04:20 IST 2024","Thu Feb 08 11:04:25 IST 2024","5652","","new login functionality","","","","user should be logged in username and new password",""
+"passed","Thu Feb 08 11:05:03 IST 2024","Thu Feb 08 11:05:14 IST 2024","10309","","delete user","","","","to delete user",""

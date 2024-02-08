@@ -75,14 +75,14 @@ class DashboardPage extends Page {
         await this.selectenable.click()
         await this.inputUsername.setValue(username)
         await this.inputEmployeename.setValue("b")
-        await browser.pause(3000)
+        await browser.pause(process.env.medium_wait)
         store = await this.selectEmployee.getText();
         console.log("employee name",store)
         await this.selectEmployee.click()
         await this.inputPassword.setValue(password)
         await this.inputconfirmPassword.setValue(password)
         await this.btnsave.click()
-        await browser.pause(3000)
+        await browser.pause(process.env.medium_wait)
     }
     async editUser(username){
         await this.tabadmin.click()
@@ -90,7 +90,7 @@ class DashboardPage extends Page {
         await this.selectrole.click()
         await this.selectESS.click()
         await this.inputEmployeename.setValue(store)
-        await browser.pause(3000)
+        await browser.pause(process.env.medium_wait)
         await this.selectEmployee.click()
         await this.selectstatus.click()
         await this.selectenable.click()
@@ -98,9 +98,9 @@ class DashboardPage extends Page {
         await this.iconedit.click()
         await this.essenable.click() 
         await this.selectAdmin.click()
-        await browser.pause(3000)
+        await browser.pause(process.env.medium_wait)
         await this.btnsave.click()
-        await browser.pause(3000)
+        await browser.pause(process.env.medium_wait)
      }
      async adminVerify(){
         await this.tabadmin.click()
@@ -111,7 +111,7 @@ class DashboardPage extends Page {
         await this.selectrole.click()
         await this.selectAdmin.click()
         await this.inputEmployeename.setValue(store)
-        await browser.pause(3000)
+        await browser.pause(process.env.medium_wait)
         await this.selectEmployee.click()
         await this.selectstatus.click()
         await this.selectenable.click()

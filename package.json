@@ -16,5 +16,8 @@
     "@wdio/local-runner": "^8.29.7",
     "@wdio/mocha-framework": "^8.29.3",
     "@wdio/spec-reporter": "^8.29.7"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.1"
   }
 }
