@@ -171,7 +171,7 @@ exports.config = {
 
       try {
           execSync('allure generate allure-results --clean', { stdio: 'inherit' });
-          execSync('allure open', { stdio: 'inherit', detached: true }); // Open Allure report
+        //   execSync('allure open', { stdio: 'inherit', detached: true }); // Open Allure report
       } catch (error) {
           console.error('Error generating or opening Allure report:', error);
       }
