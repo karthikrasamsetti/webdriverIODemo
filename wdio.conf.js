@@ -151,32 +151,38 @@ exports.config = {
      */
     // onPrepare: function (config, capabilities) {
     // },
-    before: function (capabilities, specs) {
-      // Clean the existing Allure results directory before running the tests
-      const allureResultsPath = join(process.cwd(), 'allure-results');
-      const fs = require('fs');
+//     before: function (capabilities, specs) {
+//       // Clean the existing Allure results directory before running the tests
+//       const allureResultsPath = join(process.cwd(), 'allure-results');
+//       const fs = require('fs');
 
-      try {
-          if (fs.existsSync(allureResultsPath)) {
-              fs.rmdirSync(allureResultsPath, { recursive: true });
-          }
-      } catch (error) {
-          console.error('Error cleaning Allure results directory:', error);
-      }
-  },
+//       try {
+//           if (fs.existsSync(allureResultsPath)) {
+//               fs.rmdirSync(allureResultsPath, { recursive: true });
+//           }
+//       } catch (error) {
+//           console.error('Error cleaning Allure results directory:', error);
+//       }
+//   },
 
-  onComplete: function () {
-      // Generate Allure report after all tests are completed
-      const execSync = require('child_process').execSync;
+//   onComplete: function () {
+//       // Generate Allure report after all tests are completed
+//       const execSync = require('child_process').execSync;
 
-      try {
-          execSync('allure generate allure-results --clean', { stdio: 'inherit' });
-        //   execSync('allure open', { stdio: 'inherit', detached: true }); // Open Allure report
-      } catch (error) {
-          console.error('Error generating or opening Allure report:', error);
-      }
-  },
-
+//       try {
+//           execSync('allure generate allure-results --clean', { stdio: 'inherit' });
+//         //   execSync('allure open', { stdio: 'inherit', detached: true }); // Open Allure report
+//       } catch (error) {
+//           console.error('Error generating or opening Allure report:', error);
+//       }
+//   },
+  hooks: {
+    afterStep: async (step, scenario, { error, result, duration, passed, retries }) => {
+        if (error) {
+            await browser.takeScreenshot();
+        }
+    }
+},
     /**
      * Gets executed before a worker process is spawned and can be used to initialize specific service
      * for that worker as well as modify runtime environments in an async fashion.

@@ -2,6 +2,7 @@ const { expect } = require('@wdio/globals')
 const LoginPage = require('../pageobjects/login.page')
 const RequestPasswordResetCodePage = require('../pageobjects/requestPasswordResetCode.page')
 const dashboardPage = require('../pageobjects/dashboard.page')
+const tool=require("../../utils/tools")
 const JsonData=require("../../data/user.json")
 require("dotenv").config();
 
