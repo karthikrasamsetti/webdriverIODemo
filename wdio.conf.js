@@ -165,17 +165,17 @@ exports.config = {
 //       }
 //   },
 
-//   onComplete: function () {
-//       // Generate Allure report after all tests are completed
-//       const execSync = require('child_process').execSync;
+  onComplete: function () {
+      // Generate Allure report after all tests are completed
+      const execSync = require('child_process').execSync;
 
-//       try {
-//           execSync('allure generate allure-results --clean', { stdio: 'inherit' });
-//         //   execSync('allure open', { stdio: 'inherit', detached: true }); // Open Allure report
-//       } catch (error) {
-//           console.error('Error generating or opening Allure report:', error);
-//       }
-//   },
+      try {
+          execSync('allure generate allure-results --clean', { stdio: 'inherit' });
+        //   execSync('allure open', { stdio: 'inherit', detached: true }); // Open Allure report
+      } catch (error) {
+          console.error('Error generating or opening Allure report:', error);
+      }
+  },
   hooks: {
     afterStep: async (step, scenario, { error, result, duration, passed, retries }) => {
         if (error) {
